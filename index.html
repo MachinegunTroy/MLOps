@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Input for Prediction</title>
+</head>
+<body>
+    <h2>Input Data for Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="duration">Duration:</label><br>
+        <input type="text" id="duration" name="duration"><br>
+
+        <label for="protocoltype">Protocol Type:</label><br>
+        <input type="text" id="protocoltype" name="protocoltype"><br>
+
+        <label for="service">Service:</label><br>
+        <input type="text" id="service" name="service"><br>
+
+        <label for="flag">Flag:</label><br>
+        <input type="text" id="flag" name="flag"><br>
+
+        <label for="srcbytes">Source Bytes:</label><br>
+        <input type="text" id="srcbytes" name="srcbytes"><br>
+
+        <label for="dstbytes">Destination Bytes:</label><br>
+        <input type="text" id="dstbytes" name="dstbytes"><br>
+
+        <label for="land">Land:</label><br>
+        <input type="text" id="land" name="land"><br>
+
+        <label for="wrongfragment">Wrong Fragment:</label><br>
+        <input type="text" id="wrongfragment" name="wrongfragment"><br>
+
+        <label for="urgent">Urgent:</label><br>
+        <input type="text" id="urgent" name="urgent"><br>
+
+        <label for="hot">Hot:</label><br>
+        <input type="text" id="hot" name="hot"><br>
+
+        <label for="numfailedlogins">Number of Failed Logins:</label><br>
+        <input type="text" id="numfailedlogins" name="numfailedlogins"><br>
+
+        <label for="loggedin">Logged In:</label><br>
+        <input type="text" id="loggedin" name="loggedin"><br>
+
+        <label for="numcompromised">Number Compromised:</label><br>
+        <input type="text" id="numcompromised" name="numcompromised"><br>
+
+        <label for="rootshell">Root Shell:</label><br>
+        <input type="text" id="rootshell" name="rootshell"><br>
+
+        <label for="suattempted">Su Attempted:</label><br>
+        <input type="text" id="suattempted" name="suattempted"><br>
+
+        <label for="numroot">Number Root:</label><br>
+        <input type="text" id="numroot" name="numroot"><br>
+
+        <label for="numfilecreations">Number File Creations:</label><br>
+        <input type="text" id="numfilecreations" name="numfilecreations"><br>
+
+        <label for="numshells">Number Shells:</label><br>
+        <input type="text" id="numshells" name="numshells"><br>
+
+        <label for="numaccessfiles">Number Access Files:</label><br>
+        <input type="text" id="numaccessfiles" name="numaccessfiles"><br>
+
+        <label for="numoutboundcmds">Number Outbound Cmds:</label><br>
+        <input type="text" id="numoutboundcmds" name="numoutboundcmds"><br>
+
+        <label for="ishostlogin">Is Host Login:</label><br>
+        <input type="text" id="ishostlogin" name="ishostlogin"><br>
+
+        <label for="isguestlogin">Is Guest Login:</label><br>
+        <input type="text" id="isguestlogin" name="isguestlogin"><br>
+
+        <label for="count">Count:</label><br>
+        <input type="text" id="count" name="count"><br>
+
+        <label for="srvcount">Srv Count:</label><br>
+        <input type="text" id="srvcount" name="srvcount"><br>
+
+        <label for="serrorrate">Serror Rate:</label><br>
+        <input type="text" id="serrorrate" name="serrorrate"><br>
+
+        <label for="srvserrorrate">Srv Serror Rate:</label><br>
+        <input type="text" id="srvserrorrate" name="srvserrorrate"><br>
+
+        <label for="rerrorrate">Rerror Rate:</label><br>
+        <input type="text" id="rerrorrate" name="rerrorrate"><br>
+
+        <label for="srvrerrorrate">Srv Rerror Rate:</label><br>
+        <input type="text" id="srvrerrorrate" name="srvrerrorrate"><br>
+
+        <label for="samesrvrate">Same Srv Rate:</label><br>
+        <input type="text" id="samesrvrate" name="samesrvrate"><br>
+
+        <label for="diffsrvrate">Diff Srv Rate:</label><br>
+        <input type="text" id="diffsrvrate" name="diffsrvrate"><br>
+
+        <label for="srvdiffhostrate">Srv Diff Host Rate:</label><br>
+        <input type="text" id="srvdiffhostrate" name="srvdiffhostrate"><br>
+
+        <label for="dsthostcount">Dst Host Count:</label><br>
+        <input type="text" id="dsthostcount" name="dsthostcount"><br>
+
+        <label for="dsthostsrvcount">Dst Host Srv Count:</label><br>
+        <input type="text" id="dsthostsrvcount" name="dsthostsrvcount"><br>
+
+        <label for="dsthostsamesrvrate">Dst Host Same Srv Rate:</label><br>
+        <input type="text" id="dsthostsamesrvrate" name="dsthostsamesrvrate"><br>
+
+        <label for="dsthostdiffsrvrate">Dst Host Diff Srv Rate:</label><br>
+        <input type="text" id="dsthostdiffsrvrate" name="dsthostdiffsrvrate"><br>
+
+        <label for="dsthostsamesrcportrate">Dst Host Same Src Port Rate:</label><br>
+        <input type="text" id="dsthostsamesrcportrate" name="dsthostsamesrcportrate"><br>
+
+        <label for="dsthostsrvdiffhostrate">Dst Host Srv Diff Host Rate:</label><br>
+        <input type="text" id="dsthostsrvdiffhostrate" name="dsthostsrvdiffhostrate"><br>
+
+        <label for="dsthostserrorrate">Dst Host Serror Rate:</label><br>
+        <input type="text" id="dsthostserrorrate" name="dsthostserrorrate"><br>
+
+        <label for="dsthostsrvserrorrate">Dst Host Srv Serror Rate:</label><br>
+        <input type="text" id="dsthostsrvserrorrate" name="dsthostsrvserrorrate"><br>
+
+        <label for="dsthostrerrorrate">Dst Host Rerror Rate:</label><br>
+        <input type="text" id="dsthostrerrorrate" name="dsthostrerrorrate"><br>
+
+        <label for="dsthostsrvrerrorrate">Dst Host Srv Rerror Rate:</label><br>
+        <input type="text" id="dsthostsrvrerrorrate" name="dsthostsrvrerrorrate"><br>
+
+        <!-- <label for="attack">Attack Type:</label><br>
+        <input type="text" id="attack" name="attack"><br> -->
+
+        <label for="lastflag">Last Flag:</label><br>
+        <input type="text" id="lastflag" name="lastflag"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <!-- ['duration', 'protocoltype', 'service', 'flag', 'srcbytes', 'dstbytes',
+    'land', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'loggedin',
+    'numcompromised', 'rootshell', 'suattempted', 'numroot',
+    'numfilecreations', 'numshells', 'numaccessfiles', 'numoutboundcmds',
+    'ishostlogin', 'isguestlogin', 'count', 'srvcount', 'serrorrate',
+    'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate',
+    'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount',
+    'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate',
+    'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate',
+    'dsthostrerrorrate', 'dsthostsrvrerrorrate', 'attack', 'lastflag'] -->
+</body>
+</html>
