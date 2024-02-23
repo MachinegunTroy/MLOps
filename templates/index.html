@@ -1,23 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Data Input for Prediction</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Network Traffic Classification using Anomaly Detection</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body { 
+                padding-top: 20px; 
+                padding-bottom: 80px; /* Increased bottom padding to avoid overlap with the fixed bottom navbar */
+                background-color: #f5f5dc; /* Beige background */
+            }
+            .container { max-width: 800px; }
+            .custom-select, .form-control { margin-bottom: 20px; }
+            .navbar { background-color: #808080; } /* Grey background for navbars */
+            .title-text { text-align: center; margin-bottom: 40px; } /* Centered title */
+        </style>
+    </head>
 <body>
-    <h2>Input Data for Prediction</h2>
-    <form action="/predict" method="post">
-        <label for="duration">Duration:</label><br>
-        <input type="text" id="duration" name="duration"><br>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Add more nav items here if needed -->
+            </ul>
+        </div>
+    </nav>
 
-        <label for="protocoltype">Protocol Type:</label><br>
-        <input type="text" id="protocoltype" name="protocoltype"><br>
 
-        <label for="service">Service:</label><br>
-        <input type="text" id="service" name="service"><br>
+<div class="container">
+    <h2 class="mb-4">Input Data for Prediction</h2>
+    <form action="/predict" method="post" class="needs-validation" novalidate>
+        
+        <div class="form-group">
+            <label for="duration">Duration:</label>
+            <input type="text" class="form-control" id="duration" name="duration" required>
+        </div>
 
-        <label for="flag">Flag:</label><br>
-        <input type="text" id="flag" name="flag"><br>
+        <div class="form-group">
+            <label for="protocoltype">Protocol Type:</label>
+            <select class="custom-select" id="protocoltype" name="protocoltype">
+                <option value="tcp">TCP</option>
+                <option value="udp">UDP</option>
+                <option value="icmp">ICMP</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="service">Service:</label>
+            <select class="custom-select" id="service" name="service">
+                <option value="ftp_data">ftp_data</option>
+                <option value="other">other</option>
+                <option value="private">private</option>
+                <option value="http">http</option>
+                <option value="remote_job">remote_job</option>
+                <option value="name">name</option>
+                <option value="netbios_ns">netbios_ns</option>
+                <option value="eco_i">eco_i</option>
+                <option value="mtp">mtp</option>
+                <option value="telnet">telnet</option>
+                <option value="finger">finger</option>
+                <option value="domain_u">domain_u</option>
+                <option value="supdup">supdup</option>
+                <option value="uucp_path">uucp_path</option>
+                <option value="Z39_50">Z39_50</option>
+                <option value="smtp">smtp</option>
+                <option value="csnet_ns">csnet_ns</option>
+                <option value="uucp">uucp</option>
+                <option value="netbios_dgm">netbios_dgm</option>
+                <option value="urp_i">urp_i</option>
+                <option value="auth">auth</option>
+                <option value="domain">domain</option>
+                <option value="ftp">ftp</option>
+                <option value="bgp">bgp</option>
+                <option value="ldap">ldap</option>
+                <option value="ecr_i">ecr_i</option>
+                <option value="gopher">gopher</option>
+                <option value="vmnet">vmnet</option>
+                <option value="systat">systat</option>
+                <option value="http_443">http_443</option>
+                <option value="efs">efs</option>
+                <option value="whois">whois</option>
+                <option value="imap4">imap4</option>
+                <option value="iso_tsap">iso_tsap</option>
+                <option value="echo">echo</option>
+                <option value="klogin">klogin</option>
+                <option value="link">link</option>
+                <option value="sunrpc">sunrpc</option>
+                <option value="login">login</option>
+                <option value="kshell">kshell</option>
+                <option value="sql_net">sql_net</option>
+                <option value="time">time</option>
+                <option value="hostnames">hostnames</option>
+                <option value="exec">exec</option>
+                <option value="ntp_u">ntp_u</option>
+                <option value="discard">discard</option>
+                <option value="nntp">nntp</option>
+                <option value="courier">courier</option>
+                <option value="ctf">ctf</option>
+                <option value="ssh">ssh</option>
+                <option value="daytime">daytime</option>
+                <option value="shell">shell</option>
+                <option value="netstat">netstat</option>
+                <option value="pop_3">pop_3</option>
+                <option value="nnsp">nnsp</option>
+                <option value="IRC">IRC</option>
+                <option value="pop_2">pop_2</option>
+                <option value="printer">printer</option>
+                <option value="tim_i">tim_i</option>
+                <option value="pm_dump">pm_dump</option>
+                <option value="red_i">red_i</option>
+                <option value="netbios_ssn">netbios_ssn</option>
+                <option value="rje">rje</option>
+                <option value="X11">X11</option>
+                <option value="urh_i">urh_i</option>
+                <option value="http_8001">http_8001</option>
+                <option value="aol">aol</option>
+                <option value="http_2784">http_2784</option>
+                <option value="tftp_u">tftp_u</option>
+                <option value="harvest">harvest</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="flag">Flag:</label>
+            <select class="custom-select" id="flag" name="flag">
+                <option value="SF">SF</option>
+                <option value="S0">S0</option>
+                <option value="REJ">REJ</option>
+                <option value="RSTR">RSTR</option>
+                <option value="SH">SH</option>
+                <option value="RSTO">RSTO</option>
+                <option value="S1">S1</option>
+                <option value="RSTOS0">RSTOS0</option>
+                <option value="S3">S3</option>
+                <option value="S2">S2</option>
+                <option value="OTH">OTH</option>
+            </select>
+        </div>
 
         <label for="srcbytes">Source Bytes:</label><br>
         <input type="text" id="srcbytes" name="srcbytes"><br>
@@ -136,18 +263,23 @@
         <label for="lastflag">Last Flag:</label><br>
         <input type="text" id="lastflag" name="lastflag"><br>
 
+        <div>
         <input type="submit" value="Predict">
+        </div>
     </form>
-
-    <!-- ['duration', 'protocoltype', 'service', 'flag', 'srcbytes', 'dstbytes',
-    'land', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'loggedin',
-    'numcompromised', 'rootshell', 'suattempted', 'numroot',
-    'numfilecreations', 'numshells', 'numaccessfiles', 'numoutboundcmds',
-    'ishostlogin', 'isguestlogin', 'count', 'srvcount', 'serrorrate',
-    'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate',
-    'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount',
-    'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate',
-    'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate',
-    'dsthostrerrorrate', 'dsthostsrvrerrorrate', 'attack', 'lastflag'] -->
+     <!-- Bottom Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light fixed-bottom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bottomNav" aria-controls="bottomNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="bottomNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Privacy Policy</a>
+                </li>
+                <!-- Add more nav items here if needed -->
+            </ul>
+        </div>
+    </nav>
 </body>
 </html>
